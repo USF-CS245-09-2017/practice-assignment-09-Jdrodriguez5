@@ -55,20 +55,12 @@ public class BinaryHeap {
         }
     }
 
-    private boolean isLeaf(int pos){
-        return ((pos > size/2) && (pos <= size));
-    }
-
     private int right(int pos) {
-        return 2 * pos + 1;
+        return 2 * pos + 2;
     }
 
     private int left(int pos) {
-        return 2 * pos;
-    }
-
-    private int parent(int pos) {
-        return pos/2;
+        return 2 * pos + 1;
     }
 
     private boolean hasLeftChild(int pos) {
@@ -79,15 +71,10 @@ public class BinaryHeap {
         return right(pos) < size;
     }
 
-    private boolean hasparent(int pos) {
-        return parent(pos) >= 0;
-    }
-
-    public void grow_array() {
+    private void grow_array() {
         int[] temp = new int[data.length*2];
-        for(int i = 0; i < data.length;i++) {
-            temp[i] = data[i];
-        }
+        for(int i = 0; i < data.length;i++)
+            temp[i] = data[i]; // System.arraycopy(data, 0, temp, 0, data.length);
         data = temp;
     }
 
