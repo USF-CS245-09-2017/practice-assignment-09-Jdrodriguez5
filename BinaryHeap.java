@@ -9,7 +9,6 @@ public class BinaryHeap {
     public BinaryHeap() {
         data = new int[maxsize];
         size = 0;
-//        data[0] = Integer.MIN_VALUE;
     }
 
     public void add(int item){
